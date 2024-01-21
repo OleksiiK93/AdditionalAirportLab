@@ -2,11 +2,11 @@ from person import Person
 from plane import Plane
 from airport import Airport
 
-person_1 = Person('Oleksii', 30)
-person_2 = Person('Paul', 18)
-person_3 = Person('Helga', 49)
 airport = Airport('Glasgow International')
-plane = Plane('Airbus', 'ZZ89', 2)
+person_1 = Person('Oleksii', 30, 'ZZ89', 500.0, airport)
+person_2 = Person('Paul', 18, 'EJ991', 20.5, airport)
+person_3 = Person('Helga', 49, 'ZZ89', 150.98, airport)
+plane = Plane('Airbus', 'ZZ89', 3)
 
 # print(f'The plane on flight {plane.flight_number} is an {plane.type} with capacity of {plane.capacity}.')
 # plane.add_passenger(person_1)
@@ -22,8 +22,13 @@ airport.add_passenger(person_1)
 airport.add_passenger(person_2)
 airport.add_passenger(person_3)
 
-for passenger in airport.departure_lounge:
-    print(passenger.__dict__)
-
 airport.boarding(plane)
-print(airport.departure_lounge[0].__dict__)
+
+# for passenger in plane.passengers:
+#     print(passenger.__dict__)
+
+# for passenger in airport.departure_lounge:
+#     print(passenger.__dict__)
+
+person_2.buy_stuff("Lego")
+print(person_2.cash)
